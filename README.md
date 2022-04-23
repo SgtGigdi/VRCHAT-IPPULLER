@@ -12,3 +12,4 @@ More languages soon to come
 
 Join discord to start pulling.
 *NOT FINISHED BUT WILL BE RELEASED SOON*
+https://discord.gg/7cyrKZcj8W
