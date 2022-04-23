@@ -1,5 +1,4 @@
 <div align=center>
-  <img src="" alt="SgtGigdi-Launcher">
 
   ### SgtGigdi VRCHAT ip puller is an IP Puller for vrchat similar to xresolver an xbox IP puller it logs all IPS to a database which you can search later.
   
