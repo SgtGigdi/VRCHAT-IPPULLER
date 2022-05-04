@@ -11,5 +11,6 @@
 More languages soon to come
 
 Join discord to start pulling.
-*NOT FINISHED BUT WILL BE RELEASED SOON*
+*NOT FINISHED BUT The Beta Build Is Out Now.*
+Join discord for help + tutorial and more
 https://discord.gg/7cyrKZcj8W
