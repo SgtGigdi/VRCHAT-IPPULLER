@@ -64,69 +64,74 @@ namespace GigdiPuller
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private async void button1_Click(object sender, EventArgs e)
         {
-            String ID = userid.Text;
-            String Method = method.Text;
-            if (Method == "invite")
+            string userId = userid.Text;
+            string youtubeUrl = method.Text;
+
+            if (string.IsNullOrEmpty(userId) || string.IsNullOrEmpty(youtubeUrl))
             {
-                using (WebClient webClient = new WebClient())
+                MessageBox.Show("Please provide both User ID and YouTube URL.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            try
+            {
+                string apiUrl = $"https://vrchatapi.onrender.com/vrchat/api/v1/create-endpoint?userId={userId}&youtubeUrl={Uri.EscapeDataString(youtubeUrl)}";
+                var handler = new HttpClientHandler();
+                handler.CookieContainer = CookieHelper.CookieContainer;
+
+                using (HttpClient client = new HttpClient(handler))
                 {
-                    try
+                    HttpResponseMessage response = await client.GetAsync(apiUrl);
+
+                    if (!response.IsSuccessStatusCode)
                     {
-                        string result = webClient.DownloadString("https://sgtgigdilauncher-purchaseapi.herokuapp.com/vrchat/api/v1/ippuller/inviterequest");
-                        Process.Start("https://vrchat.com/home/user/usr_cebde138-461c-460e-bcd1-88d3a8680b9e");
-                        MessageBox.Show("Please ensure you have friended SgtGigdiInviter as a friend on vrc");
-                    }
-                    catch (WebException)
-                    {
-                        MessageBox.Show("Invites are currently disabled or the server is offline. Check the discord for updates.", "GigdiPuller ERROR!",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        string errorContent = await response.Content.ReadAsStringAsync();
+                        dynamic errorResult = JsonConvert.DeserializeObject(errorContent);
+
+                        if (response.StatusCode == HttpStatusCode.Forbidden)
+                        {
+                            MessageBox.Show($"Error: {errorResult.error}", "Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Activate a 12-hour key on our website for free, by logging in on the website and click VRChat puller and completing the steps.");
+                            Process.Start("https://vrchatapi.onrender.com");
+                        }
+                        else
+                        {
+                            MessageBox.Show("The API appears to be offline or the information inputted for generation is incorrect.  Please try again later.", "API Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+
                         return;
                     }
+
+                    string responseContent = await response.Content.ReadAsStringAsync();
+                    dynamic result = JsonConvert.DeserializeObject(responseContent);
+
+                    string grabUrl = result.grabUrl;
+                    string trackUrl = result.trackUrl;
+                    string endpointId = result.endpointId;
+
+                    instanceid.Text = endpointId;
+                    label8.Text = "Youtube URL: " + youtubeUrl;
+                    pullurl.Text = grabUrl;
+
+                    MessageBox.Show("Endpoint created successfully!\nGrab URL: " + grabUrl + "\nTrack URL: " + trackUrl, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
-            using (WebClient webClient = new WebClient())
+            catch (HttpRequestException)
             {
-                try
-                {
-                    Process.Start("https://vrchat.com/home/user/usr_cebde138-461c-460e-bcd1-88d3a8680b9e");
-                    MessageBox.Show("Please ensure you have friended SgtGigdiInviter as a friend on vrc");
-                    string result = webClient.DownloadString("https://sgtgigdilauncher-purchaseapi.herokuapp.com/vrchat/api/v1/ippuller/start?way=" + Method + "&user=" + ID);
-                    dynamic results = JsonConvert.DeserializeObject(result);
-                    instanceid.Text = results.instanceid;
-                    worldurl.Text = results.worldurl;
-                    pullurl.Text = results.pullurl;
-                    ClickToJoinWorld.Visible = true;
-                }
-                catch (WebException)
-                {
-                    MessageBox.Show("Something went wrong. Please ensure you have your correct USER ID and a method in the boxes above or the server is offline. Check the discord for updates.", "GigdiPuller ERROR!",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                MessageBox.Show("Error connecting to the API. The information inputted for generation is either incorrect or the server is down. Please try again later.", "API Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-
-        private void Button8_Click(object sender, EventArgs e)
-        {
-
+            catch (Exception ex)
+            {
+                MessageBox.Show("Unexpected error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             Clipboard.SetText(pullurl.Text);
             MessageBox.Show("Successfully Copied To Clipboard!");
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            Clipboard.SetText(worldurl.Text);
-            MessageBox.Show("Successfully Copied To Clipboard!");
-        }
-
-        private void Stuff_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -142,7 +147,7 @@ namespace GigdiPuller
 
         private void button9_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("To start. Simply Create A New Instance using the menu here. Then join the world either by clicking Click to join world. or joining the invite sent if you enabled that. then invite the person you are pulling to the world. Once they join copy the pull url and paste it into the url box on the map. once finished come back here and enter your instance ID to the pulling menu and there is the information.");
+            MessageBox.Show("To start. Simply Create A New Instance using the menu here. Then join a world with a working video player and then invite the person you are pulling to the world. Once they join copy the pull url and paste it into the url box on the map. once finished come back here and enter your instance ID to the pulling menu and there is the information.");
         }
 
         private void OpenYouTubeChannel_Click(object sender, EventArgs e)
@@ -202,16 +207,6 @@ namespace GigdiPuller
         private void siticoneControlBox1_Click(object sender, EventArgs e)
         {
             Application.Exit();
-        }
-
-        private void button11_Click_1(object sender, EventArgs e)
-        {
-            Process.Start(worldurl.Text);
-        }
-
-        private void worldurl_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void button1_Click_1(object sender, EventArgs e)

@@ -42,7 +42,6 @@ namespace GigdiPuller
             this.CurrentIP = new System.Windows.Forms.Label();
             this.Create = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.pullmyinstance = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -54,18 +53,16 @@ namespace GigdiPuller
             this.label6 = new System.Windows.Forms.Label();
             this.ID = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.ClickToJoinWorld = new System.Windows.Forms.Button();
             this.userid = new Siticone.UI.WinForms.SiticoneRoundedTextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.method = new Siticone.UI.WinForms.SiticoneRoundedTextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.instanceid = new System.Windows.Forms.Label();
             this.pullurl = new System.Windows.Forms.Label();
-            this.worldurl = new System.Windows.Forms.Label();
             this.InstancePuller = new System.Windows.Forms.ListBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.method = new Siticone.UI.WinForms.SiticoneRoundedTextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fastColoredTextBox2)).BeginInit();
             this.SuspendLayout();
@@ -223,21 +220,6 @@ namespace GigdiPuller
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button3.Cursor = System.Windows.Forms.Cursors.Default;
-            this.button3.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(618, 336);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(138, 38);
-            this.button3.TabIndex = 10;
-            this.button3.Text = "Copy World URL";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
             // pullmyinstance
             // 
             this.pullmyinstance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
@@ -299,6 +281,7 @@ namespace GigdiPuller
             this.fastColoredTextBox2.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.fastColoredTextBox2.DescriptionFile = "";
             this.fastColoredTextBox2.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.fastColoredTextBox2.Font = new System.Drawing.Font("Courier New", 9.75F);
             this.fastColoredTextBox2.ForeColor = System.Drawing.Color.White;
             this.fastColoredTextBox2.IndentBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
             this.fastColoredTextBox2.IsReplaceMode = false;
@@ -384,32 +367,6 @@ namespace GigdiPuller
             this.label7.TabIndex = 50;
             this.label7.Text = "Time: 30 minutes";
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(-1, 372);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(85, 19);
-            this.label8.TabIndex = 51;
-            this.label8.Text = "World URL:";
-            // 
-            // ClickToJoinWorld
-            // 
-            this.ClickToJoinWorld.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.ClickToJoinWorld.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClickToJoinWorld.Cursor = System.Windows.Forms.Cursors.Default;
-            this.ClickToJoinWorld.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ClickToJoinWorld.ForeColor = System.Drawing.Color.White;
-            this.ClickToJoinWorld.Location = new System.Drawing.Point(3, 342);
-            this.ClickToJoinWorld.Name = "ClickToJoinWorld";
-            this.ClickToJoinWorld.Size = new System.Drawing.Size(224, 26);
-            this.ClickToJoinWorld.TabIndex = 45;
-            this.ClickToJoinWorld.Text = "Click to join world.";
-            this.ClickToJoinWorld.UseVisualStyleBackColor = false;
-            this.ClickToJoinWorld.Visible = false;
-            this.ClickToJoinWorld.Click += new System.EventHandler(this.button11_Click_1);
-            // 
             // userid
             // 
             this.userid.AllowDrop = true;
@@ -443,50 +400,11 @@ namespace GigdiPuller
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(81, 79);
+            this.label9.Location = new System.Drawing.Point(27, 79);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(90, 19);
+            this.label9.Size = new System.Drawing.Size(213, 19);
             this.label9.TabIndex = 54;
-            this.label9.Text = "Your user ID";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(405, 79);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(108, 19);
-            this.label10.TabIndex = 55;
-            this.label10.Text = "Method to join";
-            // 
-            // method
-            // 
-            this.method.AllowDrop = true;
-            this.method.BorderColor = System.Drawing.Color.Red;
-            this.method.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.method.DefaultText = "Method";
-            this.method.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.method.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.method.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.method.DisabledState.Parent = this.method;
-            this.method.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.method.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(39)))), ((int)(((byte)(42)))));
-            this.method.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.method.FocusedState.Parent = this.method;
-            this.method.ForeColor = System.Drawing.Color.White;
-            this.method.HoveredState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.method.HoveredState.Parent = this.method;
-            this.method.Location = new System.Drawing.Point(345, 102);
-            this.method.Margin = new System.Windows.Forms.Padding(4);
-            this.method.Name = "method";
-            this.method.PasswordChar = '\0';
-            this.method.PlaceholderForeColor = System.Drawing.Color.White;
-            this.method.PlaceholderText = "";
-            this.method.SelectedText = "";
-            this.method.ShadowDecoration.Parent = this.method;
-            this.method.Size = new System.Drawing.Size(236, 30);
-            this.method.TabIndex = 56;
-            this.method.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.label9.Text = "User ID of person being pulled";
             // 
             // label11
             // 
@@ -496,7 +414,7 @@ namespace GigdiPuller
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(183, 19);
             this.label11.TabIndex = 57;
-            this.label11.Text = "Can be \"invite\" or \"other\"";
+            this.label11.Text = "Enter a valid youtube URL";
             // 
             // instanceid
             // 
@@ -504,7 +422,7 @@ namespace GigdiPuller
             this.instanceid.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.instanceid.Location = new System.Drawing.Point(85, 271);
             this.instanceid.Name = "instanceid";
-            this.instanceid.Size = new System.Drawing.Size(54, 16);
+            this.instanceid.Size = new System.Drawing.Size(53, 16);
             this.instanceid.TabIndex = 58;
             this.instanceid.Text = "Instance";
             // 
@@ -514,20 +432,9 @@ namespace GigdiPuller
             this.pullurl.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pullurl.Location = new System.Drawing.Point(69, 303);
             this.pullurl.Name = "pullurl";
-            this.pullurl.Size = new System.Drawing.Size(43, 16);
+            this.pullurl.Size = new System.Drawing.Size(42, 16);
             this.pullurl.TabIndex = 59;
             this.pullurl.Text = "pullurl";
-            // 
-            // worldurl
-            // 
-            this.worldurl.AutoSize = true;
-            this.worldurl.Font = new System.Drawing.Font("Microsoft YaHei", 3.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.worldurl.Location = new System.Drawing.Point(84, 382);
-            this.worldurl.Name = "worldurl";
-            this.worldurl.Size = new System.Drawing.Size(22, 6);
-            this.worldurl.TabIndex = 60;
-            this.worldurl.Text = "worldurl";
-            this.worldurl.Click += new System.EventHandler(this.worldurl_Click);
             // 
             // InstancePuller
             // 
@@ -558,15 +465,64 @@ namespace GigdiPuller
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
+            // method
+            // 
+            this.method.AllowDrop = true;
+            this.method.BorderColor = System.Drawing.Color.Red;
+            this.method.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.method.DefaultText = "URL";
+            this.method.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.method.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.method.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.method.DisabledState.Parent = this.method;
+            this.method.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.method.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(39)))), ((int)(((byte)(42)))));
+            this.method.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.method.FocusedState.Parent = this.method;
+            this.method.ForeColor = System.Drawing.Color.White;
+            this.method.HoveredState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.method.HoveredState.Parent = this.method;
+            this.method.Location = new System.Drawing.Point(345, 102);
+            this.method.Margin = new System.Windows.Forms.Padding(4);
+            this.method.Name = "method";
+            this.method.PasswordChar = '\0';
+            this.method.PlaceholderForeColor = System.Drawing.Color.White;
+            this.method.PlaceholderText = "";
+            this.method.SelectedText = "";
+            this.method.ShadowDecoration.Parent = this.method;
+            this.method.Size = new System.Drawing.Size(236, 30);
+            this.method.TabIndex = 56;
+            this.method.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(417, 79);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(94, 19);
+            this.label10.TabIndex = 55;
+            this.label10.Text = "Youtube URL";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(4, 339);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(98, 19);
+            this.label8.TabIndex = 62;
+            this.label8.Text = "Youtube URL:";
+            // 
             // instancepullercreator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(759, 392);
+            this.ClientSize = new System.Drawing.Size(759, 376);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.worldurl);
             this.Controls.Add(this.pullurl);
             this.Controls.Add(this.instanceid);
             this.Controls.Add(this.panel1);
@@ -575,8 +531,6 @@ namespace GigdiPuller
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.userid);
-            this.Controls.Add(this.ClickToJoinWorld);
-            this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.ID);
             this.Controls.Add(this.label6);
@@ -588,7 +542,6 @@ namespace GigdiPuller
             this.Controls.Add(this.label2);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.pullmyinstance);
-            this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.Create);
             this.Controls.Add(this.InstancePuller);
@@ -615,7 +568,6 @@ namespace GigdiPuller
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button Create;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button pullmyinstance;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Label label2;
@@ -629,20 +581,18 @@ namespace GigdiPuller
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label ID;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button ClickToJoinWorld;
         private Siticone.UI.WinForms.SiticoneRoundedTextBox userid;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private Siticone.UI.WinForms.SiticoneRoundedTextBox method;
         private System.Windows.Forms.Label label11;
         private Siticone.UI.WinForms.SiticoneControlBox siticoneControlBox1;
         private System.Windows.Forms.Label instanceid;
         private System.Windows.Forms.Label pullurl;
-        private System.Windows.Forms.Label worldurl;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Label CurrentIP;
         private System.Windows.Forms.ListBox InstancePuller;
         private System.Windows.Forms.Button button1;
+        private Siticone.UI.WinForms.SiticoneRoundedTextBox method;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label8;
     }
 }

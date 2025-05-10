@@ -5,35 +5,317 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>SgtGigdi VRCHAT IP PULLER</title>
-    <link href="https://fonts.googleapis.com/css?family=Karla:400,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.8.95/css/materialdesignicons.min.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/bd-coming-soon.css">
+    <title>VRChat IP Puller</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+    <style>
+        :root {
+            --primary: #4f46e5;
+            --primary-hover: #4338ca;
+            --secondary: #1e293b;
+            --light: #f8fafc;
+            --dark: #0f172a;
+            --text: #64748b;
+        }
+        
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            color: var(--light);
+            background-color: var(--dark);
+        }
+        
+        .gradient-overlay {
+            background: linear-gradient(135deg, rgba(79, 70, 229, 0.9) 0%, rgba(15, 23, 42, 0.95) 100%);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+        
+        .bg-pattern {
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgdmlld0JveD0iMCAwIDYwIDYwIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4wMyI+PHBhdGggZD0iTTM2IDM0djZoNnYtNmgtNnptNi02aDZ2LTZoLTZ2NnptLTYgMGg2di02aC02djZ6bS02IDZoNnYtNmgtNnY2em0xMi0xMmg2di02aC02djZ6bS02LTZoNnYtNmgtNnY2em0xMiAwaDZ2LTZoLTZ2NnptLTYgMTJoNnYtNmgtNnY2em0tNi0xMmg2di02aC02djZ6Ii8+PC9nPjwvZz48L3N2Zz4=');
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+        }
+        
+        .navbar {
+            background-color: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--light);
+        }
+        
+        .nav-link {
+            color: var(--light);
+            font-weight: 500;
+            margin: 0 1rem;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: var(--primary);
+        }
+        
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .page-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(to right, #fff, #a5b4fc);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .page-description {
+            font-size: 1.25rem;
+            color: var(--light);
+            margin-bottom: 2.5rem;
+            max-width: 700px;
+            line-height: 1.7;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary);
+            border: none;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(79, 70, 229, 0.25);
+            margin: 0 0.5rem 1rem 0.5rem;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 10px rgba(79, 70, 229, 0.3);
+        }
+        
+        .btn-outline {
+            color: var(--light);
+            background-color: transparent;
+            border: 2px solid var(--light);
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            margin: 0 0.5rem 1rem 0.5rem;
+        }
+        
+        .btn-outline:hover {
+            color: var(--dark);
+            background-color: var(--light);
+            transform: translateY(-2px);
+        }
+        
+        .features {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 3rem;
+            gap: 2rem;
+        }
+        
+        .feature-card {
+            background-color: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 12px;
+            padding: 1.5rem;
+            width: 300px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature-icon {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .feature-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .feature-description {
+            color: var(--text);
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        
+        footer {
+            background-color: rgba(15, 23, 42, 0.9);
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .social-icon {
+            color: var(--light);
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            color: var(--primary);
+        }
+        
+        .copyright {
+            color: var(--text);
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .page-title {
+                font-size: 2.5rem;
+            }
+            
+            .page-description {
+                font-size: 1.1rem;
+            }
+            
+            .features {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
 </head>
 
-<body class="min-vh-100 d-flex flex-column">
+<body>
+    <div class="gradient-overlay"></div>
+    <div class="bg-pattern"></div>
 
-    <header>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
-            <nav class="navbar navbar-dark bg-transparenet">
-                <a class="navbar-brand" href="#">
-                    <img src="" alt="">
+            <a class="navbar-brand" href="#">VRChat IP Puller</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#features">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://github.com/behindSgtGigdi/VRCHAT-IPPULLER/tree/main" target="_blank">GitHub</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://discord.gg/7cyrKZcj8W" target="_blank">Discord</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1 class="page-title">VRChat IP Puller</h1>
+            <p class="page-description"></p>
+            
+            <!-- Call-to-Action Buttons -->
+            <div class="mt-4">
+                <a href="https://vrchatapi.onrender.com" target="_blank" class="btn btn-primary">
+                    <i class="fas fa-globe me-2"></i>Access Web Interface
                 </a>
-                <span class="navbar-text ml-auto d-none d-sm-inline-block">https://discord.gg/7cyrKZcj8W </span>
-                <span class="navbar-text d-none d-sm-inline-block">https://discord.gg/7cyrKZcj8W</span>
-            </nav>
+                <a href="https://github.com/behindSgtGigdi/VRCHAT-IPPULLER/tree/main" target="_blank" class="btn btn-outline">
+                    <i class="fab fa-github me-2"></i>View on GitHub
+                </a>
+                <a href="https://discord.gg/7cyrKZcj8W" target="_blank" class="btn btn-primary">
+                    <i class="fab fa-discord me-2"></i>Join Our Community
+                </a>
+            </div>
+            
+            <!-- Features Section -->
+            <div class="features" id="features">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h3 class="feature-title">Network Analysis</h3>
+                    <p class="feature-description">Monitor connection quality and analyze network performance in real-time to optimize your VRChat experience.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3 class="feature-title">Custom API</h3>
+                    <p class="feature-description">Create and deploy custom endpoints that integrate seamlessly with our powerful API infrastructure.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="feature-title">Security Tools</h3>
+                    <p class="feature-description">Enhance your security with our suite of diagnostic tools specifically designed for VRChat users.</p>
+                </div>
+            </div>
         </div>
-    </header>
-    <main class="my-auto">
+    </section>
+
+    <!-- Footer -->
+    <footer>
         <div class="container">
-            <h1 class="page-title">VrChat IP Puller downloadable now.</h1>
-            <p class="page-description">Used to pull ips on a game called vrchat
-            </p>
-            <p>downloadable now. Check github page</p>
-            </nav>
+            <div class="social-icons">
+                <a href="https://github.com/behindSgtGigdi/VRCHAT-IPPULLER/tree/main" class="social-icon" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://discord.gg/7cyrKZcj8W" class="social-icon" target="_blank">
+                    <i class="fab fa-discord"></i>
+                </a>
+            </div>
+            <p class="copyright">© 2025 GigdiPullers | All Rights Reserved</p>
         </div>
-    </main>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

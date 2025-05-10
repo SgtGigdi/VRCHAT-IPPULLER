@@ -28,7 +28,12 @@
             this.siticoneRoundedButton1 = new Siticone.UI.WinForms.SiticoneRoundedButton();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.txtEmail = new Siticone.UI.WinForms.SiticoneRoundedTextBox();
+            this.txtpassword = new Siticone.UI.WinForms.SiticoneRoundedTextBox();
+            this.lblemail = new System.Windows.Forms.Label();
+            this.lblpass = new System.Windows.Forms.Label();
             this.siticoneShadowForm = new Siticone.UI.WinForms.SiticoneShadowForm(this.components);
+            this.siticoneRoundedButton2 = new Siticone.UI.WinForms.SiticoneRoundedButton();
             this.SuspendLayout();
             // 
             // siticoneDragControl1
@@ -111,7 +116,7 @@
             this.siticoneRoundedButton1.ForeColor = System.Drawing.Color.White;
             this.siticoneRoundedButton1.HoveredState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
             this.siticoneRoundedButton1.HoveredState.Parent = this.siticoneRoundedButton1;
-            this.siticoneRoundedButton1.Location = new System.Drawing.Point(145, 84);
+            this.siticoneRoundedButton1.Location = new System.Drawing.Point(131, 97);
             this.siticoneRoundedButton1.Name = "siticoneRoundedButton1";
             this.siticoneRoundedButton1.ShadowDecoration.Parent = this.siticoneRoundedButton1;
             this.siticoneRoundedButton1.Size = new System.Drawing.Size(255, 27);
@@ -143,6 +148,110 @@
             this.label4.TabIndex = 34;
             this.label4.Text = "GigdiPuller V1.0.0";
             // 
+            // txtEmail
+            // 
+            this.txtEmail.AllowDrop = true;
+            this.txtEmail.BorderColor = System.Drawing.Color.Red;
+            this.txtEmail.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.siticoneTransition1.SetDecoration(this.txtEmail, Siticone.UI.AnimatorNS.DecorationType.None);
+            this.txtEmail.DefaultText = "Email";
+            this.txtEmail.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtEmail.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtEmail.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtEmail.DisabledState.Parent = this.txtEmail;
+            this.txtEmail.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtEmail.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(39)))), ((int)(((byte)(42)))));
+            this.txtEmail.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtEmail.FocusedState.Parent = this.txtEmail;
+            this.txtEmail.ForeColor = System.Drawing.Color.White;
+            this.txtEmail.HoveredState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtEmail.HoveredState.Parent = this.txtEmail;
+            this.txtEmail.Location = new System.Drawing.Point(173, 45);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(4);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.PasswordChar = '\0';
+            this.txtEmail.PlaceholderForeColor = System.Drawing.Color.White;
+            this.txtEmail.PlaceholderText = "";
+            this.txtEmail.SelectedText = "";
+            this.txtEmail.ShadowDecoration.Parent = this.txtEmail;
+            this.txtEmail.Size = new System.Drawing.Size(172, 19);
+            this.txtEmail.TabIndex = 53;
+            this.txtEmail.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtpassword
+            // 
+            this.txtpassword.AllowDrop = true;
+            this.txtpassword.BorderColor = System.Drawing.Color.Red;
+            this.txtpassword.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.siticoneTransition1.SetDecoration(this.txtpassword, Siticone.UI.AnimatorNS.DecorationType.None);
+            this.txtpassword.DefaultText = "Password";
+            this.txtpassword.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtpassword.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtpassword.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtpassword.DisabledState.Parent = this.txtpassword;
+            this.txtpassword.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtpassword.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(39)))), ((int)(((byte)(42)))));
+            this.txtpassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtpassword.FocusedState.Parent = this.txtpassword;
+            this.txtpassword.ForeColor = System.Drawing.Color.White;
+            this.txtpassword.HoveredState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtpassword.HoveredState.Parent = this.txtpassword;
+            this.txtpassword.Location = new System.Drawing.Point(173, 72);
+            this.txtpassword.Margin = new System.Windows.Forms.Padding(4);
+            this.txtpassword.Name = "txtpassword";
+            this.txtpassword.PasswordChar = '*';
+            this.txtpassword.PlaceholderForeColor = System.Drawing.Color.White;
+            this.txtpassword.PlaceholderText = "";
+            this.txtpassword.SelectedText = "";
+            this.txtpassword.ShadowDecoration.Parent = this.txtpassword;
+            this.txtpassword.Size = new System.Drawing.Size(172, 18);
+            this.txtpassword.TabIndex = 54;
+            this.txtpassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // lblemail
+            // 
+            this.lblemail.AutoSize = true;
+            this.siticoneTransition1.SetDecoration(this.lblemail, Siticone.UI.AnimatorNS.DecorationType.None);
+            this.lblemail.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblemail.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.lblemail.Location = new System.Drawing.Point(45, 45);
+            this.lblemail.Name = "lblemail";
+            this.lblemail.Size = new System.Drawing.Size(121, 21);
+            this.lblemail.TabIndex = 55;
+            this.lblemail.Text = "Email Address:";
+            // 
+            // lblpass
+            // 
+            this.lblpass.AutoSize = true;
+            this.siticoneTransition1.SetDecoration(this.lblpass, Siticone.UI.AnimatorNS.DecorationType.None);
+            this.lblpass.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblpass.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.lblpass.Location = new System.Drawing.Point(80, 72);
+            this.lblpass.Name = "lblpass";
+            this.lblpass.Size = new System.Drawing.Size(86, 21);
+            this.lblpass.TabIndex = 56;
+            this.lblpass.Text = "Password:";
+            // 
+            // siticoneRoundedButton2
+            // 
+            this.siticoneRoundedButton2.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.siticoneRoundedButton2.BorderThickness = 1;
+            this.siticoneRoundedButton2.CheckedState.Parent = this.siticoneRoundedButton2;
+            this.siticoneRoundedButton2.CustomImages.Parent = this.siticoneRoundedButton2;
+            this.siticoneTransition1.SetDecoration(this.siticoneRoundedButton2, Siticone.UI.AnimatorNS.DecorationType.None);
+            this.siticoneRoundedButton2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(127)))), ((int)(((byte)(243)))));
+            this.siticoneRoundedButton2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.siticoneRoundedButton2.ForeColor = System.Drawing.Color.White;
+            this.siticoneRoundedButton2.HoveredState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
+            this.siticoneRoundedButton2.HoveredState.Parent = this.siticoneRoundedButton2;
+            this.siticoneRoundedButton2.Location = new System.Drawing.Point(131, 130);
+            this.siticoneRoundedButton2.Name = "siticoneRoundedButton2";
+            this.siticoneRoundedButton2.ShadowDecoration.Parent = this.siticoneRoundedButton2;
+            this.siticoneRoundedButton2.Size = new System.Drawing.Size(255, 27);
+            this.siticoneRoundedButton2.TabIndex = 57;
+            this.siticoneRoundedButton2.Text = "Register";
+            this.siticoneRoundedButton2.Click += new System.EventHandler(this.siticoneRoundedButton2_Click_1);
+            // 
             // gigdipullerlogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -150,6 +259,11 @@
             this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(39)))), ((int)(((byte)(42)))));
             this.ClientSize = new System.Drawing.Size(564, 176);
+            this.Controls.Add(this.siticoneRoundedButton2);
+            this.Controls.Add(this.lblpass);
+            this.Controls.Add(this.lblemail);
+            this.Controls.Add(this.txtpassword);
+            this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.siticoneRoundedButton1);
@@ -190,5 +304,10 @@
         private Siticone.UI.WinForms.SiticoneShadowForm siticoneShadowForm;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private Siticone.UI.WinForms.SiticoneRoundedTextBox txtpassword;
+        private Siticone.UI.WinForms.SiticoneRoundedTextBox txtEmail;
+        private System.Windows.Forms.Label lblpass;
+        private System.Windows.Forms.Label lblemail;
+        private Siticone.UI.WinForms.SiticoneRoundedButton siticoneRoundedButton2;
     }
 }

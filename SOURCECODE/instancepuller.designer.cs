@@ -43,13 +43,9 @@ namespace GigdiPuller
             this.CurrentIP = new System.Windows.Forms.Label();
             this.instance = new Siticone.UI.WinForms.SiticoneRoundedTextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.user1displayname = new System.Windows.Forms.Label();
-            this.user2displayname = new System.Windows.Forms.Label();
-            this.user1platform = new System.Windows.Forms.Label();
-            this.user1ID = new System.Windows.Forms.Label();
-            this.user2platform = new System.Windows.Forms.Label();
+            this.InstanceID = new System.Windows.Forms.Label();
+            this.user2timestamp = new System.Windows.Forms.Label();
             this.user2ID = new System.Windows.Forms.Label();
-            this.HIDDENBYDEFAULT = new System.Windows.Forms.Label();
             this.user2ip = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
@@ -164,7 +160,6 @@ namespace GigdiPuller
             this.Watermark.CharWidth = 8;
             this.Watermark.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.Watermark.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
-            this.Watermark.Font = new System.Drawing.Font("Courier New", 9.75F);
             this.Watermark.IsReplaceMode = false;
             this.Watermark.Location = new System.Drawing.Point(334, 299);
             this.Watermark.Name = "Watermark";
@@ -184,7 +179,7 @@ namespace GigdiPuller
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(0, 302);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(150, 16);
+            this.label3.Size = new System.Drawing.Size(149, 16);
             this.label3.TabIndex = 7;
             this.label3.Text = "Developed By SgtGigdi";
             this.label3.Click += new System.EventHandler(this.label3_Click);
@@ -235,97 +230,53 @@ namespace GigdiPuller
             this.button1.Cursor = System.Windows.Forms.Cursors.Default;
             this.button1.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(187, 67);
+            this.button1.Location = new System.Drawing.Point(374, 63);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(20, 187);
+            this.button1.Size = new System.Drawing.Size(20, 176);
             this.button1.TabIndex = 62;
             this.button1.UseVisualStyleBackColor = false;
             // 
-            // user1displayname
+            // InstanceID
             // 
-            this.user1displayname.AutoSize = true;
-            this.user1displayname.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.user1displayname.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.user1displayname.Location = new System.Drawing.Point(63, 67);
-            this.user1displayname.Name = "user1displayname";
-            this.user1displayname.Size = new System.Drawing.Size(36, 14);
-            this.user1displayname.TabIndex = 22;
-            this.user1displayname.Text = "User1";
+            this.InstanceID.AutoSize = true;
+            this.InstanceID.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.InstanceID.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.InstanceID.Location = new System.Drawing.Point(29, 77);
+            this.InstanceID.Name = "InstanceID";
+            this.InstanceID.Size = new System.Drawing.Size(64, 14);
+            this.InstanceID.TabIndex = 63;
+            this.InstanceID.Text = "Instance ID";
             // 
-            // user2displayname
+            // user2timestamp
             // 
-            this.user2displayname.AutoSize = true;
-            this.user2displayname.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.user2displayname.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.user2displayname.Location = new System.Drawing.Point(280, 67);
-            this.user2displayname.Name = "user2displayname";
-            this.user2displayname.Size = new System.Drawing.Size(36, 14);
-            this.user2displayname.TabIndex = 63;
-            this.user2displayname.Text = "User2";
-            // 
-            // user1platform
-            // 
-            this.user1platform.AutoSize = true;
-            this.user1platform.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.user1platform.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.user1platform.Location = new System.Drawing.Point(-1, 103);
-            this.user1platform.Name = "user1platform";
-            this.user1platform.Size = new System.Drawing.Size(77, 21);
-            this.user1platform.TabIndex = 64;
-            this.user1platform.Text = "Platform";
-            // 
-            // user1ID
-            // 
-            this.user1ID.AutoSize = true;
-            this.user1ID.Font = new System.Drawing.Font("Microsoft Tai Le", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.user1ID.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.user1ID.Location = new System.Drawing.Point(1, 139);
-            this.user1ID.Name = "user1ID";
-            this.user1ID.Size = new System.Drawing.Size(33, 10);
-            this.user1ID.TabIndex = 65;
-            this.user1ID.Text = "USERID";
-            // 
-            // user2platform
-            // 
-            this.user2platform.AutoSize = true;
-            this.user2platform.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.user2platform.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.user2platform.Location = new System.Drawing.Point(207, 94);
-            this.user2platform.Name = "user2platform";
-            this.user2platform.Size = new System.Drawing.Size(52, 14);
-            this.user2platform.TabIndex = 66;
-            this.user2platform.Text = "Platform";
+            this.user2timestamp.AutoSize = true;
+            this.user2timestamp.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.user2timestamp.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.user2timestamp.Location = new System.Drawing.Point(29, 101);
+            this.user2timestamp.Name = "user2timestamp";
+            this.user2timestamp.Size = new System.Drawing.Size(64, 14);
+            this.user2timestamp.TabIndex = 66;
+            this.user2timestamp.Text = "Timestamp";
             // 
             // user2ID
             // 
             this.user2ID.AutoSize = true;
             this.user2ID.Font = new System.Drawing.Font("Microsoft Tai Le", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.user2ID.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.user2ID.Location = new System.Drawing.Point(208, 128);
+            this.user2ID.Location = new System.Drawing.Point(30, 124);
             this.user2ID.Name = "user2ID";
             this.user2ID.Size = new System.Drawing.Size(33, 10);
             this.user2ID.TabIndex = 67;
             this.user2ID.Text = "USERID";
-            // 
-            // HIDDENBYDEFAULT
-            // 
-            this.HIDDENBYDEFAULT.AutoSize = true;
-            this.HIDDENBYDEFAULT.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.HIDDENBYDEFAULT.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.HIDDENBYDEFAULT.Location = new System.Drawing.Point(-1, 178);
-            this.HIDDENBYDEFAULT.Name = "HIDDENBYDEFAULT";
-            this.HIDDENBYDEFAULT.Size = new System.Drawing.Size(120, 16);
-            this.HIDDENBYDEFAULT.TabIndex = 68;
-            this.HIDDENBYDEFAULT.Text = "HIDDENBYDEFAULT";
             // 
             // user2ip
             // 
             this.user2ip.AutoSize = true;
             this.user2ip.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.user2ip.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.user2ip.Location = new System.Drawing.Point(207, 167);
+            this.user2ip.Location = new System.Drawing.Point(29, 143);
             this.user2ip.Name = "user2ip";
-            this.user2ip.Size = new System.Drawing.Size(49, 16);
+            this.user2ip.Size = new System.Drawing.Size(48, 16);
             this.user2ip.TabIndex = 69;
             this.user2ip.Text = "USERIP";
             this.user2ip.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -337,7 +288,7 @@ namespace GigdiPuller
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.SystemColors.Control;
-            this.button3.Location = new System.Drawing.Point(219, 197);
+            this.button3.Location = new System.Drawing.Point(32, 162);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(108, 26);
             this.button3.TabIndex = 70;
@@ -345,7 +296,7 @@ namespace GigdiPuller
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // ScriptHub
+            // instancepuller
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -353,13 +304,9 @@ namespace GigdiPuller
             this.ClientSize = new System.Drawing.Size(397, 319);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.user2ip);
-            this.Controls.Add(this.HIDDENBYDEFAULT);
             this.Controls.Add(this.user2ID);
-            this.Controls.Add(this.user2platform);
-            this.Controls.Add(this.user1ID);
-            this.Controls.Add(this.user1platform);
-            this.Controls.Add(this.user2displayname);
-            this.Controls.Add(this.user1displayname);
+            this.Controls.Add(this.user2timestamp);
+            this.Controls.Add(this.InstanceID);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.instance);
             this.Controls.Add(this.label3);
@@ -370,7 +317,7 @@ namespace GigdiPuller
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "ScriptHub";
+            this.Name = "instancepuller";
             this.Tag = "ScriptHub";
             this.Text = "ScriptHub";
             this.Load += new System.EventHandler(this.ScriptHub_Load);
@@ -395,13 +342,9 @@ namespace GigdiPuller
         private System.Windows.Forms.Label CurrentIP;
         private Siticone.UI.WinForms.SiticoneRoundedTextBox instance;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label user1displayname;
-        private System.Windows.Forms.Label user2displayname;
-        private System.Windows.Forms.Label user1platform;
-        private System.Windows.Forms.Label user1ID;
-        private System.Windows.Forms.Label user2platform;
+        private System.Windows.Forms.Label InstanceID;
+        private System.Windows.Forms.Label user2timestamp;
         private System.Windows.Forms.Label user2ID;
-        private System.Windows.Forms.Label HIDDENBYDEFAULT;
         private System.Windows.Forms.Label user2ip;
         private System.Windows.Forms.Button button3;
     }
