@@ -50,4 +50,4 @@ This tool is provided for educational and network diagnostic purposes only. User
 
 ---
 
-© 2025 GigdiPullers | All Rights Reserved
+© 2026 GigdiPullers | All Rights Reserved
